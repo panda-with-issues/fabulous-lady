@@ -1,8 +1,8 @@
 const Deck = {
   deck: [
     {
-      name: 'Unicorno',
-      src: './src/unicorno.jpg'
+      name: 'unicorno',
+      src: './src/unicorno.jpeg'
     }
   ],
 
@@ -14,8 +14,10 @@ const Deck = {
       this.discards = []
     }
     const i = Math.floor(Math.random() * this.deck.length)
-    const card = this.deck.splice(i, 1)
+    const card = this.deck.splice(i, 1)[0]
     this.discards.push(card)
+    console.log(this.deck)
+    console.log(this.discards)
     return card
   }
 }
