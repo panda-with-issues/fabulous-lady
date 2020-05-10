@@ -1,13 +1,12 @@
-class Deck {
-  constructor () {
-    this.deck = [
-      {
-        name: 'Unicorno',
-        src: './src/unicorno.jpg'
-      }
-    ]
-    this.discards = []
-  }
+const Deck = {
+  deck: [
+    {
+      name: 'Unicorno',
+      src: './src/unicorno.jpg'
+    }
+  ],
+
+  discards: [],
 
   draw () {
     if (!this.deck.length) {
