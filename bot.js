@@ -42,10 +42,16 @@ class Bot extends ActivityHandler {
           let reply
           switch (warnedArr.length) {
               case 0:
-                reply = `Non ci sono persone sospettate`
+                reply = 'Non ci sono persone sospettate'
+                break
+              case 1:
+                reply = `L'unica persona sospettata è ${warned}.`
+                break
+              default:
+                reply = `Le persone sospettate sono ${warned}.`
           }
 
-          await context.sendActivity(`Le persone sospettate sono ${}.`)
+          await context.sendActivity(reply)
       }
 
       else if (msg[0] === '!aiuto') {
