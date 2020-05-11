@@ -63,9 +63,20 @@ class Bot extends ActivityHandler {
           await context.sendActivity(`I comandi disponibili sono:  
           **!adunata**: comincia un nuovo turno. Chi dà il comando interpreta la Favolosah Signora;  
           **!ispirami**: intercede presso la Dea Arcobaleno per offrire uno spunto da usare per la propria scusa;  
-          **!occhiataccia [per giocatore]**: assegna un\'occhiataccia all* giocator* indicat*. Il round termina quando un* giocator* prende la seconda occhiataccia;  
+          **!occhiataccia [...giocatore]**: assegna un\'occhiataccia all* giocator* indicat*. Il round termina quando un* giocator* prende la seconda occhiataccia;  
           **!stato**: mostra quali giocatori hanno già un\'occhiataccia;  
+          **!setMaxInsp [...num]**: imposta a num il massimo numero di ispirazioni che un giocatore può richiedere;  
           **!aiuto**: mostra questo messaggio`)
+      }
+
+      else if (msg[0] === '!setMaxInsp') {
+          const num = Number.parseInt(msg[msg.length - 1])
+          if (!isNaN(num)) {
+            Fabulous.maxInsp = num
+            await context.sendActivity(`\`MaxInsp set to ${num}\``)
+          } else {
+              await context.sendActivity('`Invalid input`')
+          }
       }
       await next()
     })
