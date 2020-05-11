@@ -2,8 +2,6 @@ const Deck = [
   /*
    * mie idee:
    *
-   * Comunità Ursina
-   * Comune eco-lesbica
    * cruising
    *
    * riserve:
@@ -53,6 +51,10 @@ const Deck = [
     src: './src/CFU.jpeg'
   },
   {
+    name: 'Charlie\'s Angels',
+    src: './src/Charlie\'s Angels.jpeg'
+  },
+  {
     name: 'Cher',
     src: './src/Cher.jpeg'
   },
@@ -61,12 +63,16 @@ const Deck = [
     src: './src/ciseteropatriarcato.jpeg'
   },
   {
-    name: 'Charlie\'s Angels',
-    src: './src/Charlie\'s Angels.jpeg'
-  },
-  {
     name: 'collezione di sex toys',
     src: './src/collezione di sex toys.jpeg'
+  },
+  {
+    name: 'comune eco-lesbo',
+    src: './src/comune eco-lesbo.jpeg'
+  },
+  {
+    name: 'comunità ursina',
+    src: './src/comunità ursina.jpeg'
   },
   {
     name: 'cosmopolitan',
@@ -125,6 +131,10 @@ const Deck = [
     src: './src/Lady Gaga.jpeg'
   },
   {
+    name: 'lubrificante',
+    src: './src/lubrificante.jpeg'
+  },
+  {
     name: 'Madonna',
     src: './src/Madonna.jpeg'
   },
@@ -134,7 +144,7 @@ const Deck = [
   },
   {
     name: 'manifestazione transfemminista',
-    src: './src/CFU.jpeg'
+    src: './src/manifestazione transfemminista.jpeg'
   },
   {
     name: 'MYSS KETA',
@@ -162,7 +172,7 @@ const Deck = [
   },
   {
     name: 'pride',
-    src: './src/parrucchiere.jpeg'
+    src: './src/pride.jpeg'
   },
   {
     name: 'reading',
@@ -201,5 +211,6 @@ const Deck = [
     src: './src/zia bigotta.jpeg'
   }
 ]
+console.log(Deck.length)
 
 module.exports = Deck
