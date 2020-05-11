@@ -3,15 +3,9 @@ const Fabulous = {
 
   warned: [],
 
-  deck: [
-    {
-      name: 'unicorno',
-      src: './src/unicorno.jpeg'
-    }
-  ],
-  discards: [],
+  Deck: require('./Deck'),
 
-  maxInsp: 2,
+  maxInsp: 999,
 
   inspired: {},
 
@@ -33,13 +27,11 @@ const Fabulous = {
   },
 
   draw () {
-    if (!this.deck.length) {
-      this.deck = this.discards
-      this.discards = []
+    if (!this.Deck.length) {
+      this.Deck = require('./Deck')
     }
-    const i = Math.floor(Math.random() * this.deck.length)
-    const card = this.deck.splice(i, 1)[0]
-    this.discards.push(card)
+    const i = Math.floor(Math.random() * this.Deck.length)
+    const card = this.Deck.splice(i, 1)[0]
     return card
   },
 
