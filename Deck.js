@@ -1,34 +1,54 @@
 const Deck = [
   /*
-   * mie idee:
-   *
-   * cruising
-   *
-   * riserve:
-   *
+   * Idee riunione
+   * 
+   * Achille Lauro
+   * Lilli Gruber
    * Power rangers
-   * Astronave
-   * Ring
-   * Whisky
-   * Squalo
-   * Lama (animale)
+   * birra
+   * mbeb
+   * Little Fountains
+   * Animal Crossing
+   * Campo di cactus
+   * De Luca
+   * Sushi
+   * Regina Elisabetta
+   * Paris Hilton
+   * Oroscopo
+   * Profilo Facebook TERF
+   * camionista (donna)
+   * ennesima diretta instagram
+   * seminarista sfranta
+   * orgia al campo scout
+   * abuso d'ufficio del rettorato
+   * Valeria Marini
+   * suora ardente
+   * dominatrice scatenata
+   * Selvaggia Lucarelli
+   * Costantino della Gherardesca
+   * capelli blu
+   * popper
+   * coppetta mestruale
+   * iva sugli assorbenti
+   * prove sull'esistenza della bisessualità
+   * Milan Fashion Week
+   * botox
+   * Genitore 1 e Genitore 2
+   * cotta etero
+   * Rocky Horror Picture Show
+   * Il papillon di Ellen Degeneris
+   * unghie lunghe
+   * moglie da prigione
+   * vestiti arancioni
+   * cruising
+   * il genere del giorno
+   *
    * {
    *   name: 'rave party',
    *   src: './src/rave party.jpeg'
    * },
-   * Campo di cactus
-   * Bubble tea
-   * Lanciafiamme
-   * Crociera ai Caraibi
-   * Sushi
-   * Limousine
-   * Hilton palace 
-   * Oroscopo
    *
-   * note:
-   * Frozen II (Tommaso) -> Elsa
-   * Vibratore (Tommaso) -> Collezione di sex toys
-   * Binario 9 e tre quarti
+   * 
    */
   {
     name: 'bretelle',
@@ -211,6 +231,9 @@ const Deck = [
     src: './src/zia bigotta.jpeg'
   }
 ]
-console.log(Deck.length)
+
+Deck.forEach(element => {
+  console.log(element.name)
+})
 
 module.exports = Deck
