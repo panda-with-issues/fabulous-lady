@@ -35,16 +35,27 @@ class Bot extends ActivityHandler {
       }
 
       else if (msg[0] === '!stato') {
-          const warned = Fabulous.warned.map(person => {
+          const warnedArr = Fabulous.warned.map(person => {
               return '**' + person + '**'
           })
-          await context.sendActivity(`Le persone sospettate sono ${warned.join(', ')}.`)
+          const warned = warnedArr.join(', ')
+          let reply
+          switch (warnedArr.length) {
+              case 0:
+                reply = `Non ci sono persone sospettate`
+          }
+
+          await context.sendActivity(`Le persone sospettate sono ${}.`)
       }
 
       else if (msg[0] === '!aiuto') {
-          // tanks for this markdown
-          await context.sendActivity('I comandi disponibili sono:**!adunata**: comincia un nuovo turno. Chi dà il comando interpreta la Favolosah Signora;\n **!ispirami**: intercede presso la Dea Arcobaleno per offrire uno spunto da usare per la propria scusa;\n **!occhiataccia [per giocatore]**: assegna un\'occhiataccia all* giocator* indicat*. Il round termina quando un* giocator* prende la seconda occhiataccia;\n **!stato**: mostra quali giocatori hanno già un\'occhiataccia;\n **!aiuto**: mostra questo messaggio')
-          await context.sendActivity( //TODO: Splittare le stringhe, debuggare !stato, aggiungere un counter per le ispirazioni
+          await context.sendActivity(`I comandi disponibili sono:  
+          **!adunata**: comincia un nuovo turno. Chi dà il comando interpreta la Favolosah Signora;  
+          **!ispirami**: intercede presso la Dea Arcobaleno per offrire uno spunto da usare per la propria scusa;  
+          **!occhiataccia [per giocatore]**: assegna un\'occhiataccia all* giocator* indicat*. Il round termina quando un* giocator* prende la seconda occhiataccia;  
+          **!stato**: mostra quali giocatori hanno già un\'occhiataccia;  
+          **!aiuto**: mostra questo messaggio`)
+          //TODO: debuggare !stato, aggiungere un counter per le ispirazioni
       }
       await next()
     })
