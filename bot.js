@@ -1,4 +1,4 @@
-const { ActivityHandler, ActivityTypes } = require('botbuilder');
+const { ActivityHandler, ActivityTypes } = require('botbuilder')
 const fs = require('fs')
 const path = require('path')
 const Fabulous = require('./Fabulous')
@@ -10,11 +10,16 @@ class Bot extends ActivityHandler {
       const msg = context.activity.text.split(' ')
       if (msg[0] === '!ispirami') {
         const name = context.activity.from.name
-        const card = Fabulous.draw()
-        const reply = { type: ActivityTypes.Message }
-        reply.text = `**${name}**, la mia parola per te è **${card.name}**`
-        reply.attachments = [await this.getImg(card)]
-        await context.sendActivity(reply)
+        if (Fabulous.canAskInspiration(name)) {
+            Fabulous.updateInspired(name)
+            const card = Fabulous.draw()
+            const reply = { type: ActivityTypes.Message }
+            reply.text = `**${name}**, la mia parola per te è **${card.name}**`
+            reply.attachments = [await this.getImg(card)]
+            await context.sendActivity(reply)
+        } else {
+            await context.sendActivity('Sashé, la Dea Arcobaleno sembra non rispondere alle tue preghiere :(')
+        }
       }
 
       else if (msg[0] === '!adunata') {
@@ -61,7 +66,6 @@ class Bot extends ActivityHandler {
           **!occhiataccia [per giocatore]**: assegna un\'occhiataccia all* giocator* indicat*. Il round termina quando un* giocator* prende la seconda occhiataccia;  
           **!stato**: mostra quali giocatori hanno già un\'occhiataccia;  
           **!aiuto**: mostra questo messaggio`)
-          //TODO: debuggare !stato, aggiungere un counter per le ispirazioni
       }
       await next()
     })
