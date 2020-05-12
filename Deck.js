@@ -1,13 +1,11 @@
+/**
+ * Mettere commento sul formato e nome immagini
+ */
+
 const Deck = [
   /*
    * Idee riunione
    * 
-   * Achille Lauro
-   * Lilli Gruber
-   * Power rangers
-   * birra
-   * mbeb
-   * Little Fountains
    * Animal Crossing
    * Campo di cactus
    * De Luca
@@ -43,13 +41,22 @@ const Deck = [
    * cruising
    * il genere del giorno
    *
-   * {
-   *   name: 'rave party',
-   *   src: './src/rave party.jpeg'
-   * },
+   
    *
    * 
    */
+   {
+    name: 'Achille Lauro',
+    src: './src/Achille Lauro.jpeg'
+  },
+  {
+    name: 'Animal Crossing',
+    src: './src/Animal Crossing.jpeg'
+  },
+  {
+    name: 'birra',
+    src: './src/birra.jpeg'
+  },
   {
     name: 'bretelle',
     src: './src/bretelle.jpeg'
@@ -151,6 +158,14 @@ const Deck = [
     src: './src/Lady Gaga.jpeg'
   },
   {
+    name: 'Lilli Gruber',
+    src: './src/Lilli Gruber.jpeg'
+  },
+  {
+    name: 'Little Fountains',
+    src: './src/Little Fountains.jpeg'
+  },
+  {
     name: 'lubrificante',
     src: './src/lubrificante.jpeg'
   },
@@ -165,6 +180,10 @@ const Deck = [
   {
     name: 'manifestazione transfemminista',
     src: './src/manifestazione transfemminista.jpeg'
+  },
+  {
+    name: 'mbeb', // maschio bianco etero basic
+    src: './src/mbeb.jpeg'
   },
   {
     name: 'MYSS KETA',
@@ -191,8 +210,16 @@ const Deck = [
     src: './src/parrucchiere.jpeg'
   },
   {
+    name: 'power rangers',
+    src: './src/power rangers.jpeg'
+  },
+  {
     name: 'pride',
     src: './src/pride.jpeg'
+  },
+  {
+    name: 'rave party',
+    src: './src/rave party.jpeg'
   },
   {
     name: 'reading',
