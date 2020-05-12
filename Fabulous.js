@@ -5,7 +5,7 @@ const Fabulous = {
 
   Deck: require('./Deck'),
 
-  maxInsp: 999,
+  maxInsp: 2,
 
   inspired: {},
 
