@@ -1,10 +1,10 @@
 # Fabulous-Lady
 
-Allow to play &#34;Sì, Favolosah Signora&#34; on Skype. "Sì, Favolosah Signora" is a simplified, lbtqia*-oriented version of the famous game "Aye, Dark Overlord".
+Fabolous lady is a bot with functionality that allow to play &#34;Sì, Favolosah Signora&#34; on Skype. "Sì, Favolosah Signora" is a simplified, LGBTQIA*-oriented version of the famous game "Aye, Dark Overlord".
 
-Fabulous Lady has been created for an event arranged by Associazione Studentesca Universitaria Iris, an lgbtqia+ students association of University of Udine, Italy. Thus the interface is entirely in Italian, even if I decided to code and write documentation in English for accessibility purpose.
+Fabulous-Lady has been created for an event arranged by Associazione Studentesca Universitaria Iris, an LGBTQIA+ students association of University of Udine, Italy. Thus, bot's interface is entirely in Italian, even if I decided to code and write documentation in English for accessibility purpose.
 
-The bot **does not keep tracks of the chats** in wich it's added, nor collects data of any type. If this should happen, it wasn't my code faults and the reason is to be searched in Microsoft Azure architecture. Please let me know if you suspect that any data is gathered by the bot.
+The bot **does not keep tracks of the chats** in which it's added, nor collects data of any type. If this should happen, it wasn't my code faults and the reason is to be searched in Microsoft Azure architecture. Please let me know if you suspect that any data is gathered by the bot.
 
 This bot has been created using [Bot Framework](https://dev.botframework.com).
 
@@ -12,13 +12,14 @@ This bot has been created using [Bot Framework](https://dev.botframework.com).
 
 Fabolous-Lady will respond only to a restricted, small set of commands and ignore every message that isn't included in that set. Every command must start with a `!`. If a message sent by user starts with `!` but doesn't match with the instructions set, it is simply ignored.
 
-Whenever a task is completed successfully, Fabulous-Lady will send back a message. If no answer is returned, surely the task was failed. This could only happen if the command is misspelled or if the arguments provided are invalid.
+Whenever a task is completed successfully, Fabulous-Lady will send back a message. If no answer is returned, surely the task failed. This could only happen if the command is misspelled or if the arguments provided are invalid.
 
-Please note that Fabulous-Lady intentionally doesn't come with robust input validation, so if you enter an incorrect argument (e.g. a wrong player name) but it's still in a possible valid format, the bot will accomplish its task. In cases like the insertion of a wrong player name, there is no going back -- however, this shouldn't break the game. Learn more in commands spec
+Please note that Fabulous-Lady intentionally doesn't come with robust input validation, so if you enter an incorrect argument (e.g. a wrong player name) but in a possible valid format, the bot will still accomplish its task. In cases like the insertion of a wrong player name, there is no going back. Hopefully, this shouldn't be game-breaking. Learn more in commands spec.
 
 ### List of commands
 
-In this spec, when a command is followed by brackets with dots means that that command accepts an argument. When providing an argument, an arbitrary set of words can follow the command, only the last word matter. That word must be of the right type and contain the specific information needed to accomplish the task.
+When a command is followed by brackets with dots, it means that such command accepts an argument. When providing an argument, an arbitrary set of words can follow the command, only the last word will be kept in consideration for instructions purpose. That word must be of the right type and contain the specific information needed to accomplish the task.
+> E.g: `!occhiataccia a quel maledetto di Matteo` will be interpreted as `!occhiataccia Matteo`.
 
 Fabulous-Lady will responde to the following commands:
 
@@ -34,8 +35,9 @@ Fabulous-Lady will responde to the following commands:
 
 - `!occhiataccia [...player]`: (translates to *withering look*)
 
-  Gives to the specified player a withering look. When the same player recieve the second withering look, that player lose, the round ends and game data stored by bot are reset. This reset doesn't includes `Fabulous.Deck`, `maxInsp`, and `maxWarns`.
-  >**Attention**: this command can be used only by the user marked as Fabulous Lady -- the one who most recently gave `!adunata`. If every other user try to call `!occhiataccia` it will have no effect and will be ignored.
+  Gives to the specified player a withering look. When the same player recieves the second withering look, that player lose, the round ends and game data stored by bot are reset. This reset doesn't includes `Fabulous.Deck`, `maxInsp`, and `maxWarns`.
+  >**Attention**: this command can only be used by the user marked as Fabulous Lady -- the one who most recently gave `!adunata`. If every other user try to call `!occhiataccia`, it will have no effect and will be ignored.
+  
   > Mind that Lady-Fabulous doesn't check player names against chat partecipants nor perform any validation check on the input. Thus everything will be a valid player name. Please double-check the name that you're giving and be consistent in the whole round: *John* and *Jhon* will be two different players with different scores!
   >The max number of withering looks a player can recieve before loosing is set by `Fabulous.maxWarns` in `Fabulous.js` module. 
   >This value can be changed in-game without modifying the source code, using the `!setMaxWarns` command. Learn more in the command spec.
