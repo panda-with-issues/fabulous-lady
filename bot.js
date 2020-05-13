@@ -50,12 +50,15 @@ class Bot extends ActivityHandler {
 
       else if (msg[0] === '!occhiataccia' && context.activity.from.name === Fabulous.lady) {
         const person = msg[msg.length - 1]
-        if (Fabulous.hasWarning(person)) {
-          Fabulous.reset()
-          await context.sendActivity(`Uh oh, ${person} aveva già un'occhiataccia... **La colpa è tutta sua!**`)
-        } else {
+        if (!Fabulous.hasWarning(person)) {
           Fabulous.warn(person)
           await context.sendActivity(`Attenzione **${person}**, Sua Sfavillanza ${Fabulous.lady} sospetta di te...`)
+        } else if (Fabulous.warned[person] <= Fabulous.maxWarns) {
+          Fabulous.warn(person)
+          await context.sendActivity(`Uh oh, ${person}, **La Favolosah Signora si sta innervosendo!** Hai già ${Fabulous.warned[person]} occhiatacce`)
+        } else {
+          Fabulous.reset()
+          await context.sendActivity(`Basta, è charo a tutti che **la colpa è tutta e sola di ${person}!**`)
         }
       }
 
@@ -89,22 +92,30 @@ class Bot extends ActivityHandler {
         **!adunata**: comincia un nuovo turno. Chi dà il comando interpreta la Favolosah Signora;  
         **!ispirami**: intercede presso la Dea Arcobaleno per offrire uno spunto da usare per la propria scusa;  
         **!occhiataccia [...giocatore]**: assegna un'occhiataccia all* giocator* indicat*. Il round termina quando un* giocator* prende la seconda occhiataccia;  
-        **!reset**: riporta tutti i valori allo stato iniziale e interrompe qualsiasi attività in atto
-        **!stato**: mostra quali giocatori hanno già un'occhiataccia;  
+        **!reset**: riporta tutti i valori allo stato iniziale e interrompe qualsiasi attività in atto  
         **!setMaxInsp [...num]**: imposta a num il massimo numero di ispirazioni che un giocatore può richiedere;  
+        **!setMaxWarns [...n]** imposta a num il numero massimo di occhiatacce che un giocatore può ricevere. All'n-esima occhiataccia, la partita finisce  
+        **!stato**: mostra quali giocatori hanno già un'occhiataccia;  
         **!aiuto**: mostra questo messaggio  
         Per maggiori informazioni o per contribuire a FavolosahSignora, visita il repo su GitHub: https://github.com/panda-with-issues/fabulous-lady`)
       }
 
-      else if (msg[0] === '!setMaxInsp') {
+      else if (msg[0] === '!setMaxInsp') { // default to 2
         const num = Number.parseInt(msg[msg.length - 1])
         if (!isNaN(num)) {
           Fabulous.maxInsp = num
-          await context.sendActivity(`\`MaxInsp set to ${num}\``)
-        } else {
-          await context.sendActivity('`Invalid input`')
+          await context.sendActivity(`Ora si può chiedere Ispirazione massimo ${num} volte`)
         }
       }
+
+      else if (msg[0] === '!setMaxWarns') {
+        const num = Number.parseInt(msg[msg.length - 1])
+        if (!isNaN(num)) {
+          Fabulous.maxWarnings = num
+          await context.sendActivity(`Ora si possono ricevere massimo ${num} occhiatacce`)
+        }
+      }
+
       await next()
     })
   }
