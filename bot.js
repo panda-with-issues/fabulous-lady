@@ -99,7 +99,7 @@ class Bot extends ActivityHandler {
         **!ispirami**: intercede presso la Dea Arcobaleno per offrire uno spunto da usare per la propria scusa;  
         **!occhiataccia [...giocatore]**: assegna un'occhiataccia all* giocator* indicat*. Il round termina quando un* giocator* prende la seconda occhiataccia;  
         **!reset**: riporta tutti i valori allo stato iniziale e interrompe qualsiasi attività in atto  
-        **!setMaxInsp [...num]**: imposta a num il massimo numero di ispirazioni che un giocatore può richiedere;  
+        **!setMaxInsp [...n]**: imposta a num il massimo numero di ispirazioni che un giocatore può richiedere;  
         **!setMaxWarns [...n]** imposta a num il numero massimo di occhiatacce che un giocatore può ricevere. All'n-esima occhiataccia, la partita finisce  
         **!stato**: mostra quali giocatori hanno già un'occhiataccia;  
         **!aiuto**: mostra questo messaggio  
