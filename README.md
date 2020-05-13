@@ -31,7 +31,7 @@ Fabulous-Lady will responde to the following commands:
 
 - `ispirami`: (translates to *inspire me*)
 
-  Send back a word and a picture explanatory of the word. This word must be used from user to tell their story. This command can be used a fixed, limited number of times (default to 2). If a user try to call `ispirami` more than allowed, a failure message will be sent back instead.
+  Send back a word and a picture explanatory of the word. This word must be used from user to tell their story. This command can be used a fixed, limited number of times (default to 3). If a user try to call `ispirami` more than allowed, a failure message will be sent back instead.
   > The max number of times `ispirami` can be called is set by the value of `Fabulous.maxInsp` in `Fabulous.js` module.
   > This value can be changed in-game, without modifying the source code, using the `setMaxInsp` command. Learn more in the command spec.
 
@@ -50,7 +50,7 @@ Fabulous-Lady will responde to the following commands:
 
 - `setMaxInsp [...n]`
 
-  Set the maximum time a user can use the `ispirami` command. It defaults to 2.
+  Set the maximum time a user can use the `ispirami` command. It defaults to 3.
   This command can be given in every moment. If called during a game, it will not end the round.
   > The word passed as argument (*n*) must convert to an *integer*. If an invalid word is passed, Fabulous-Lady will ignore the command.  
   > Values set with this command are persistent during resets and rounds.

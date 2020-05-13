@@ -29,7 +29,7 @@ const Fabulous = {
 
   Deck: Deck.slice(),
 
-  maxInsp: 2,
+  maxInsp: 3,
 
   inspired: {},
 
