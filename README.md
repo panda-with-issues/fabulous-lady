@@ -10,7 +10,7 @@ This bot has been created using [Bot Framework](https://dev.botframework.com).
 
 ## Use of Fabolous-Lady
 
-To add Fabulous-Lady to you contacts list, use this [invitation link] (https://join.skype.com/bot/10775a5a-351e-43df-b7eb-166ad67e8556)
+To add Fabulous-Lady to you contacts list, use this [invitation link](https://join.skype.com/bot/10775a5a-351e-43df-b7eb-166ad67e8556)
 
 Fabolous-Lady will respond only to a restricted, small set of commands and ignore every message that isn't included in that set. Every command must start with `@Favolosah Signora`. If a message sent by user starts with `@Favolosah Signora` but doesn't match with the instructions set, it is simply ignored.
 
