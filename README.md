@@ -12,7 +12,7 @@ This bot has been created using [Bot Framework](https://dev.botframework.com).
 
 To add Fabulous-Lady to you contacts list, use this [invitation link] (https://join.skype.com/bot/10775a5a-351e-43df-b7eb-166ad67e8556)
 
-Fabolous-Lady will respond only to a restricted, small set of commands and ignore every message that isn't included in that set. Every command must start with `@fabulous-lady`. If a message sent by user starts with `@fabulous-lady` but doesn't match with the instructions set, it is simply ignored.
+Fabolous-Lady will respond only to a restricted, small set of commands and ignore every message that isn't included in that set. Every command must start with `@Favolosah Signora`. If a message sent by user starts with `@Favolosah Signora` but doesn't match with the instructions set, it is simply ignored.
 
 Whenever a task is completed successfully, Fabulous-Lady will send back a message. If no answer is returned, surely the task failed. This could only happen if the command is misspelled or if the arguments provided are invalid.
 
@@ -21,7 +21,7 @@ Please note that Fabulous-Lady intentionally doesn't come with robust input vali
 ### List of commands
 
 When a command is followed by brackets with dots, it means that such command accepts an argument. When providing an argument, an arbitrary set of words can follow the command, only the last word will be kept in consideration for instructions purpose. That word must be of the right type and contain the specific information needed to accomplish the task.
-> E.g: `@fabulous-lady occhiataccia a quel maledetto di Matteo` will be interpreted as `@fabulous-lady occhiataccia Matteo`.
+> E.g: `@Favolosah Signora occhiataccia a quel maledetto di Matteo` will be interpreted as `@Favolosah Signora occhiataccia Matteo`.
 
 Fabulous-Lady will responde to the following commands:
 
