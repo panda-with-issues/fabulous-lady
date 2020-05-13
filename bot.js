@@ -50,15 +50,17 @@ class Bot extends ActivityHandler {
 
       else if (msg[0] === '!occhiataccia' && context.activity.from.name === Fabulous.lady) {
         const person = msg[msg.length - 1]
-        if (!Fabulous.hasWarning(person)) {
-          Fabulous.warn(person)
-          await context.sendActivity(`Attenzione **${person}**, Sua Sfavillanza ${Fabulous.lady} sospetta di te...`)
-        } else if (Fabulous.warned[person] <= Fabulous.maxWarns) {
-          Fabulous.warn(person)
-          await context.sendActivity(`Uh oh, ${person}, **La Favolosah Signora si sta innervosendo!** Hai già ${Fabulous.warned[person]} occhiatacce`)
-        } else {
-          Fabulous.reset()
-          await context.sendActivity(`Basta, è charo a tutti che **la colpa è tutta e sola di ${person}!**`)
+        if (person !== '!occhiataccia' && person !== '') {
+          if (!Fabulous.hasWarning(person)) {
+            Fabulous.warn(person)
+            await context.sendActivity(`Attenzione **${person}**, Sua Sfavillanza ${Fabulous.lady} sospetta di te...`)
+          } else if (Fabulous.warned[person] < Fabulous.maxWarns - 1) {
+            Fabulous.warn(person)
+            await context.sendActivity(`Uh oh, **${person}**, la Favolosah Signora si sta innervosendo! Hai già **${Fabulous.warned[person]}** occhiatacce`)
+          } else {
+            Fabulous.reset()
+            await context.sendActivity(`Basta, è charo a tutti che **la colpa è tutta e sola di ${person}!**`)
+          }
         }
       }
 
@@ -68,9 +70,12 @@ class Bot extends ActivityHandler {
       }
 
       else if (msg[0] === '!stato') {
-        const warnedArr = Fabulous.warned.map(person => {
-          return '**' + person + '**'
-        })
+        const warnedArr = []
+        for (const person in Fabulous.warned) {
+          const num = Fabulous.warned[person]
+          const str = `**${person}** con **${num}** ${num === 1 ? 'occhiataccia' : 'occhiatacce'}`
+          warnedArr.push(str)
+        }
         const warned = warnedArr.join(', ')
         let reply
         switch (warnedArr.length) {
@@ -81,7 +86,8 @@ class Bot extends ActivityHandler {
             reply = `L'unica persona sospettata è ${warned}.`
             break
           default:
-            reply = `Le persone sospettate sono ${warned}.`
+            reply = `Le persone sospettate sono:  
+            ${warned}.`
         }
 
         await context.sendActivity(reply)
@@ -108,10 +114,10 @@ class Bot extends ActivityHandler {
         }
       }
 
-      else if (msg[0] === '!setMaxWarns') {
+      else if (msg[0] === '!setMaxWarns') { // default to 2
         const num = Number.parseInt(msg[msg.length - 1])
         if (!isNaN(num)) {
-          Fabulous.maxWarnings = num
+          Fabulous.maxWarns = num
           await context.sendActivity(`Ora si possono ricevere massimo ${num} occhiatacce`)
         }
       }
