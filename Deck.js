@@ -354,6 +354,4 @@ const Deck = [
   }
 ]
 
-console.log(Deck.length)
-
 module.exports = Deck
