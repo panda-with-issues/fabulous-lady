@@ -37,8 +37,8 @@ Fabulous-Lady will responde to the following commands:
 
   Gives to the specified player a withering look. When the same player recieves the second withering look, that player lose, the round ends and game data stored by bot are reset. This reset doesn't includes `Fabulous.Deck`, `maxInsp`, and `maxWarns`.
   >**Attention**: this command can only be used by the user marked as Fabulous Lady -- the one who most recently gave `!adunata`. If every other user try to call `!occhiataccia`, it will have no effect and will be ignored.
-  
-  > Mind that Lady-Fabulous doesn't check player names against chat partecipants nor perform any validation check on the input. Thus everything will be a valid player name. Please double-check the name that you're giving and be consistent in the whole round: *John* and *Jhon* will be two different players with different scores!
+
+  > Mind that Lady-Fabulous doesn't check player names against chat partecipants nor perform any validation check on the input. Thus everything will be a valid player name. Please double-check the name that you're giving and be consistent in the whole round: *John* and *Jhon* will be two different players with different scores!  
   >The max number of withering looks a player can recieve before loosing is set by `Fabulous.maxWarns` in `Fabulous.js` module. 
   >This value can be changed in-game without modifying the source code, using the `!setMaxWarns` command. Learn more in the command spec.
 
