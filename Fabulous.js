@@ -1,9 +1,11 @@
+const Deck = require('./Deck')
+
 const Fabulous = {
   lady: '',
 
   warned: [],
 
-  Deck: require('./Deck'),
+  Deck: Deck.slice(),
 
   maxInsp: 2,
 
@@ -28,7 +30,7 @@ const Fabulous = {
 
   draw () {
     if (!this.Deck.length) {
-      this.Deck = require('./Deck')
+      this.Deck = Deck.slice()
     }
     const i = Math.floor(Math.random() * this.Deck.length)
     const card = this.Deck.splice(i, 1)[0]
@@ -47,6 +49,12 @@ const Fabulous = {
     this.lady = ''
     this.warned = []
     this.inspired = {}
+  },
+
+  fullReset () {
+    this.reset()
+    this.Deck = Deck.slice()
+    this.maxInsp = 2
   }
 }
 
