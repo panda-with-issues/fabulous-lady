@@ -23,7 +23,9 @@ const Deck = require('./Deck')
 const Fabulous = {
   lady: '',
 
-  warned: [],
+  maxWarns: 2,
+
+  warned: {},
 
   Deck: Deck.slice(),
 
@@ -58,11 +60,15 @@ const Fabulous = {
   },
 
   hasWarning (person) {
-    return this.warned.includes(person)
+    return Object.keys(this.warned).includes(person)
   },
 
   warn (person) {
-    this.warned.push(person)
+    if (this.hasWarning(person)) {
+      this.warned[person] += 1
+    } else {
+      this.warned[person] = 1
+    }
   },
 
   reset () {
