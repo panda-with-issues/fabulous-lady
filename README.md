@@ -25,7 +25,7 @@ Fabulous-Lady will responde to the following commands:
 
 - `!adunata` (translates to *gather*)
   
-  Begins a new round. The person who gave the command will be the Fabolous Lady for that turn and will be the only user able to use the `!occhiataccia` command.
+  Begin a new round. The person who gave the command will be the Fabolous Lady for that turn and will be the only user able to use the `!occhiataccia` command.
 
 - `!ispirami`: (translates to *inspire me*)
 
@@ -35,36 +35,36 @@ Fabulous-Lady will responde to the following commands:
 
 - `!occhiataccia [...player]`: (translates to *withering look*)
 
-  Gives to the specified player a withering look. When the same player recieves the second withering look, that player lose, the round ends and game data stored by bot are reset. This reset doesn't includes `Fabulous.Deck`, `maxInsp`, and `maxWarns`.
+  Give to the specified player a withering look. When the same player recieves the second withering look, that player lose, the round ends and game data stored by bot are reset. This reset doesn't includes `Fabulous.Deck`, `maxInsp`, and `maxWarns`.
   >**Attention**: this command can only be used by the user marked as Fabulous Lady -- the one who most recently gave `!adunata`. If every other user try to call `!occhiataccia`, it will have no effect and will be ignored.
 
   > Mind that Lady-Fabulous doesn't check player names against chat partecipants nor perform any validation check on the input. Thus everything will be a valid player name. Please double-check the name that you're giving and be consistent in the whole round: *John* and *Jhon* will be two different players with different scores!  
-  >The max number of withering looks a player can recieve before loosing is set by `Fabulous.maxWarns` in `Fabulous.js` module. 
+  >The max number of withering looks a player can recieve before losing is set by `Fabulous.maxWarns` in `Fabulous.js` module. 
   >This value can be changed in-game without modifying the source code, using the `!setMaxWarns` command. Learn more in the command spec.
 
 - `!reset`
 
-  Reset every data game to the initial state and interrupt the round. If changed, `maxInsp` and `maxWarns` will be preserved;
+  Reset every game data to the initial state and interrupt the round. If changed, `maxInsp` and `maxWarns` will be preserved;
 
 - `!setMaxInsp [...n]`
 
   Set the maximum time a user can use the `!ispirami` command. It defaults to 2.
   This command can be given in every moment. If called during a game, it will not end the round.
-  > The word passed as argument (*n*) must convert to an *integer*. If an invalid word is passed, Fabulous-Lady will ignore the command.
+  > The word passed as argument (*n*) must convert to an *integer*. If an invalid word is passed, Fabulous-Lady will ignore the command.  
   > Values set with this command are persistent during resets and rounds.
 
 - `!setMaxWarns [...n]`
   Set the number of withering looks at which a player lose. When a player receives the n-th withering look, they lose and round ends. It defaults to 2.
-  > The word passed as argument (*n*) must convert to an *integer*. If an invalid word is passed, Fabulous-Lady will ignore the command.
+  > The word passed as argument (*n*) must convert to an *integer*. If an invalid word is passed, Fabulous-Lady will ignore the command.  
   > Values set with this command are persistent during resets and rounds.
 
 - `!stato` (translates to *status*)
 
-  Shows the names of players who have received a withering look and their scores
+  Shows the names of players who have received a withering look and their scores.
 
 - `!aiuto` (translates to *help*)
 
-  Show a list of commands with a brief description
+  Show a list of commands with a brief description.
 
 ## Maintenance
 
