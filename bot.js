@@ -1,3 +1,7 @@
+/**
+ * TODO: Scrivere documentazione
+ */
+
 const { ActivityHandler, ActivityTypes } = require('botbuilder')
 const fs = require('fs')
 const path = require('path')
@@ -37,6 +41,10 @@ class Bot extends ActivityHandler {
               Fabulous.warn(person)
               await context.sendActivity(`Attenzione **${person}**, Sua Sfavillanza ${Fabulous.lady} sospetta di te...`)
           }
+      }
+
+      else if (msg[0] === '!stop') {
+        
       }
 
       else if (msg[0] === '!stato') {
